@@ -1,0 +1,8 @@
+services:
+  proxy:
+    build: infra/docker/proxy
+    ports:
+      - '8080:8080'
+      - '443:443'
+    container_name: proxy
+    entrypoint: /usr/bin/entrypoint.sh
