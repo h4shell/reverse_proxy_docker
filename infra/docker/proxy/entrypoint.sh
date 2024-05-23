@@ -13,7 +13,7 @@ server {
 echo "
 server {
     listen 0.0.0.0:8080;
-    server_name www.h4sh.it;  # Sostituire con il tuo dominio
+    server_name h4sh.it www.h4sh.it;  # Sostituire con il tuo dominio
     location / {
         proxy_pass http://192.168.1.167:80;
     }
