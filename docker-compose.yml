@@ -1,8 +1,11 @@
 services:
-  proxy:
-    build: infra/docker/proxy
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
     ports:
-      - '8080:8080'
+      - '80:80'
+      - '81:81'
       - '443:443'
-    container_name: proxy
-    entrypoint: /usr/bin/entrypoint.sh
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
